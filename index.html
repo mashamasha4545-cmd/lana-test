@@ -143,6 +143,22 @@ button:hover{transform:translateY(-1px)}
 .primary{background:#111;color:white}
 .primary:disabled{opacity:.4;cursor:not-allowed;transform:none}
 .secondary{background:#f2efe8;color:var(--ink)}
+.consultation-link{
+  display:block;
+  width:100%;
+  margin:25px 0 4px;
+  padding:16px 24px;
+  border-radius:30px;
+  background:linear-gradient(90deg,#8c7286,var(--mauve));
+  color:#fff;
+  text-align:center;
+  text-decoration:none;
+  font-size:15px;
+  font-weight:700;
+  box-shadow:0 8px 20px rgba(161,133,156,.25);
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.consultation-link:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(161,133,156,.32)}
 .helper{font-size:12px;color:var(--muted)}
 .hidden{display:none!important}
 .panel{margin-top:18px;padding:clamp(20px,4vw,30px)}
@@ -210,6 +226,18 @@ h2{font-family:Georgia, serif;font-size:23px;font-weight:400;line-height:1.25;ma
   margin-top:25px!important;
 }
 .footer{text-align:center;color:var(--muted);font-size:12px;margin-top:24px}
+.privacy{
+  margin-top:18px;
+  padding:clamp(20px,4vw,30px);
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:24px;
+  color:#55524e;
+  font-size:13px;
+}
+.privacy h2{font-size:22px;margin-bottom:12px}
+.privacy p{margin:9px 0}
+.privacy a{color:#6d5b69;text-underline-offset:3px}
 @media(max-width:520px){
   .wrap{padding:17px 12px 40px}
   .score-row{grid-template-columns:110px 1fr 22px;gap:7px}
@@ -253,6 +281,13 @@ h2{font-family:Georgia, serif;font-size:23px;font-weight:400;line-height:1.25;ma
 
   <section class="result-card hidden" id="result" aria-live="polite"></section>
   <div class="footer">Тест создан для саморефлексии и знакомства с темой самооценки.</div>
+  <section class="privacy" aria-labelledby="privacy-title">
+    <h2 id="privacy-title">Конфиденциальность</h2>
+    <p>Ваши ответы используются исключительно для формирования результата теста непосредственно в браузере.</p>
+    <p>Мы не запрашиваем имя, номер телефона или электронную почту. Ответы теста не отправляются на сервер и не сохраняются нами.</p>
+    <p>Сайт размещён на платформе GitHub Pages. Платформа может автоматически обрабатывать технические данные посетителей, включая IP-адреса, в соответствии со своей политикой конфиденциальности.</p>
+    <p><a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">Политика конфиденциальности GitHub</a></p>
+  </section>
 </div>
 
 <script>
@@ -415,6 +450,7 @@ finish.addEventListener('click',()=>{
   <h3>Что показывают ваши ответы</h3><div class="scorelist">${bars}</div>
   <h3>На что стоит обратить внимание</h3><p>${focus}</p>
   <h3>Небольшая практика для вас</h3><p>${practice}</p>
+  <a class="consultation-link" href="https://vk.ru/lanalevina_terapia" target="_blank" rel="noopener noreferrer">Записаться на консультацию</a>
   <p class="disclaimer">Этот тест — инструмент для саморефлексии, а не клиническая диагностика или стандартизированная психологическая методика. Результат отражает ваши ответы в рамках предложенных ситуаций и не является характеристикой личности.</p>
   <div class="actions"><button class="primary" id="restart">Пройти ещё раз</button><span class="helper">Сохраните вопросы, к которым хочется вернуться</span></div>`;
  result.classList.remove('hidden');
